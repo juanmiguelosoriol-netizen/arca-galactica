@@ -109,7 +109,7 @@ public abstract class Entity {
      * @param nombre
      * @return la imagen
      */
-    public static BufferedImage loadImage(String nombre) {
+    public static BufferedImage uploadImage(String nombre) {
         try {
             InputStream is = Entity.class.getResourceAsStream("poner imagen");
             if (is == null) {
