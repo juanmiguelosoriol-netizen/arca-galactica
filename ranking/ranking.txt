@@ -1,0 +1,12 @@
+
+Jobo mauricio hernandez,60,14
+JOBO,60,5
+jobin,60,3
+juan,60,15
+i,60,16
+juna,60,8
+juna,60,32
+juna,60,8
+ramon,0,9
+ramon,60,7
+jua,120,11

@@ -15,6 +15,7 @@ public class Ship extends Entity {
     private static final int INITIAL_LIVES = 3;
     private int score;
     private int lives;
+    private boolean doublePoints; //para el power up de doble puntos
 
     /**
      * Constructor de la clase Ship
@@ -25,6 +26,7 @@ public class Ship extends Entity {
         super(X_INITIAL, Y_INITIAL, uploadImage("ship.png"));
         this.score = 0;
         this.lives = INITIAL_LIVES;
+        this.doublePoints = false;
 
         setDirection(DIR_NONE);
     }
@@ -56,7 +58,9 @@ public class Ship extends Entity {
      * @param points puntos del jugador
      */
     public void addPoints(int points) {
-        if (points > 0) {
+        if (doublePoints) {
+            this.score += points * 2; //x2 al estar en doble puntos
+        } else {
             this.score += points;
         }
     }
@@ -80,6 +84,7 @@ public class Ship extends Entity {
         resetPosition();
         this.score = 0;
         this.lives = INITIAL_LIVES;
+        this.doublePoints = false;
     }
 
     /**
@@ -103,6 +108,48 @@ public class Ship extends Entity {
     public void loseLife() {
         if (lives > 0) lives--;
         if (lives == 0) setActive(false);
+    }
+
+    /**
+     * Metodo para que el jugador pueda recuperar vidasl.
+     */
+    public void recoverLife() {
+        if (lives < INITIAL_LIVES) {
+            lives++;
+        }
+    }
+
+    /**
+     * Metodo para mover la nave hacia la izquierda
+     */
+    public void moveLeft() {
+        setDirection(DIR_LEFT);
+    }
+
+    /**
+     * Metodo para mover la nave hacia la derecha
+     */
+    public void moveRight() {
+        setDirection(DIR_RIGHT);
+    }
+
+    /**
+     * Metodo para detener la nave
+     */
+    public void stop() {
+        setDirection(DIR_NONE);
+    }
+
+    public void activateDoublePoints() {
+        doublePoints = true;
+    }
+
+    public void deactivateDoublePoints() {
+        doublePoints = false;
+    }
+
+    public boolean isDoublePoints() {
+        return doublePoints;
     }
 
     //getters y setters
