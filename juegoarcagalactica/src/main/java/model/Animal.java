@@ -47,8 +47,9 @@ public class Animal extends Entity {
      */
 
     public void loseLife() {
-        if (lives > 0) lives--;
+        if (lives > 1) lives--;
         else {
+            lives = 0;
             setActive(false);
         }
     }
