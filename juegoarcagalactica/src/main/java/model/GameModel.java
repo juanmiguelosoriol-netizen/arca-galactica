@@ -53,7 +53,6 @@ public class GameModel {
 
     }
 
-
     private void createAnimals() {
         animals[0] = new Lion(48, 408);
         animals[1] = new Cow(204, 408);
