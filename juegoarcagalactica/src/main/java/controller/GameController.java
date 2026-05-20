@@ -31,10 +31,29 @@ import java.util.Random;
  */
 public class GameController implements Runnable {
 
+    /**
+     * Estado de la pantalla de inicio.
+     */
     public static final String STATUS_START = "inicio";
+
+    /**
+     * Estado cuando la partida está en curso.
+     */
     public static final String STATUS_PLAYING = "jugando";
+
+    /**
+     * Estado cuando el jugador pierde la partida.
+     */
     public static final String STATUS_GAME_OVER = "gameover";
+
+    /**
+     * Estado de la pantalla de instrucciones.
+     */
     public static final String STATUS_INSTRUCTIONS = "instrucciones";
+
+    /**
+     * Estado cuando el jugador gana la partida.
+     */
     public static final String STATUS_WIN = "ganar";
 
     private static final int FPS_DELAY = 16; // controlamos la velocidad del hilo 16ms es casi igual a 60fps
@@ -66,10 +85,10 @@ public class GameController implements Runnable {
 
 
     /**
-     * Constructor de la clase GameController
+     * Constructor de la clase GameController.
      *
-     * @param view
-     * @param mainFrame
+     * @param view      panel principal donde se dibuja el juego
+     * @param mainFrame ventana principal que contiene los botones
      */
     public GameController(GamePanel view, MainFrame mainFrame) {
         this.view = view;
@@ -614,7 +633,11 @@ public class GameController implements Runnable {
         stopSoundEffect();
     }
 
-
+    /**
+     * Asigna el nombre del jugador actual.
+     *
+     * @param playerName nombre ingresado por el jugador
+     */
     public void setPlayerName(String playerName) {
         if (playerName != null && !playerName.trim().isEmpty()) {
             this.playerName = playerName;
@@ -624,14 +647,29 @@ public class GameController implements Runnable {
         view.setPlayerName(this.playerName);
     }
 
+    /**
+     * Retorna el estado actual del juego.
+     *
+     * @return estado actual del juego
+     */
     public String getGameStatus() {
         return gameStatus;
     }
 
+    /**
+     * Retorna el tiempo transcurrido de la partida.
+     *
+     * @return tiempo en segundos
+     */
     public int getElapsedSeconds() {
         return elapsedSeconds;
     }
 
+    /**
+     * Retorna el modelo principal del juego.
+     *
+     * @return modelo del juego
+     */
     public GameModel getModel() {
         return model;
     }

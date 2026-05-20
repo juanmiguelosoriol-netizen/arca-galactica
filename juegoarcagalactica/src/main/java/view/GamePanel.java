@@ -21,17 +21,55 @@ import java.awt.image.BufferedImage;
  */
 public class GamePanel extends JPanel {
 
-    public static final int WIDTH = 670;
-    public static final int HEIGHT = 510;
 
+    /**
+     * Ancho del tablero donde se desarrolla la partida.
+     */
+    public static final int BOARD_WIDTH = 504;
+
+    /**
+     * Alto del tablero donde se desarrolla la partida.
+     */
+    public static final int BOARD_HEIGHT = 504;
+
+    /**
+     * Modelo principal del juego.
+     */
     private GameModel model;
+
+    /**
+     * Estado actual del juego.
+     */
     private String gameStatus;
+
+    /**
+     * Nombre del jugador actual.
+     */
     private String playerName;
+
+    /**
+     * Mensaje mostrado en la pantalla de inicio.
+     */
     private String message;
+
+    /**
+     * Tiempo transcurrido de la partida.
+     */
     private int elapsedSeconds;
+
+    /**
+     * Lista con los tres mejores puntajes.
+     */
     private java.util.ArrayList<PlayerRecord> top3;
 
+    /**
+     * Logo usado en la interfaz.
+     */
     private BufferedImage logo;
+
+    /**
+     * Imagen de fondo usada en la pantalla de inicio e instrucciones.
+     */
     private BufferedImage background;
 
     /**

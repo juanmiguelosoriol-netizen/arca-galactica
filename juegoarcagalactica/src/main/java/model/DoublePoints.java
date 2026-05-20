@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Representa un power-up que activa puntos dobles para el jugador.
+ */
 public class DoublePoints extends PowerUp {
 
     private static final int SPEED = 2;

@@ -44,7 +44,7 @@ public class Ship extends Entity {
     /**
      * Metodo que hace que salga un proyectil desde la nave
      *
-     * @return
+     * @return proyectil creado desde la posicion de la nave
      */
     public PlayerProjectile shoot() {
         int projectileX = getX() + (getWidth() / 2) - 3; //se divide entre 2 para que slaga de la mitad de la nave
@@ -91,7 +91,7 @@ public class Ship extends Entity {
     /**
      * Metodo que ayuda a que la entidad no se salga de la ventana del juego
      *
-     * @param boardWidth
+     * @param boardWidth ancho del tablero de juego
      */
     public void keepInside(int boardWidth) {
         if (getX() < 0) {
@@ -152,32 +152,63 @@ public class Ship extends Entity {
         setDirection(DIR_NONE);
     }
 
+    /**
+     * Activa el power-up de doble puntaje.
+     */
     public void activateDoublePoints() {
         doublePoints = true;
     }
 
+    /**
+     * Desactiva el power-up de doble puntaje.
+     */
     public void deactivateDoublePoints() {
         doublePoints = false;
     }
 
+    /**
+     * Indica si la nave tiene activo el doble puntaje.
+     *
+     * @return true si el doble puntaje esta activo, false si no
+     */
     public boolean isDoublePoints() {
         return doublePoints;
     }
 
     //getters y setters
 
+    /**
+     * Retorna las vidas actuales de la nave.
+     *
+     * @return vidas actuales de la nave
+     */
     public int getLives() {
         return lives;
     }
 
+    /**
+     * Cambia las vidas actuales de la nave.
+     *
+     * @param lives nuevas vidas de la nave
+     */
     public void setLives(int lives) {
         this.lives = lives;
     }
 
+    /**
+     * Retorna el puntaje actual de la nave.
+     *
+     * @return puntaje actual de la nave
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     * Cambia el puntaje actual de la nave.
+     *
+     * @param score nuevo puntaje de la nave
+     */
     public void setScore(int score) {
         this.score = score;
     }

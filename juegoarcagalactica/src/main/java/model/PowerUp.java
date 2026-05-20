@@ -53,10 +53,20 @@ public abstract class PowerUp extends Entity {
         }
     }
 
+    /**
+     * Obtiene la velocidad de caída del power-up.
+     *
+     * @return velocidad del power-up.
+     */
     public int getSpeed() {
         return speed;
     }
 
+    /**
+     * Modifica la velocidad de caída del power-up.
+     *
+     * @param speed nueva velocidad del power-up.
+     */
     public void setSpeed(int speed) {
         this.speed = speed;
     }

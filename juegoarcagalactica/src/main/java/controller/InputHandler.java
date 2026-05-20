@@ -12,6 +12,11 @@ public class InputHandler extends KeyAdapter {
 
     private GameController gameController;
 
+    /**
+     * Crea un manejador de entrada para controlar el juego mediante el teclado.
+     *
+     * @param gameController controlador que recibirá las acciones del teclado.
+     */
     public InputHandler(GameController gameController) {
         this.gameController = gameController;
     }

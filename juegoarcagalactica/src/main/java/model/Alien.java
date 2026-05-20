@@ -18,6 +18,8 @@ public class Alien extends Entity {
      * @param x          posicion en el eje x
      * @param y          posicion en el eje y
      * @param spriteName sprite de la imagen con la validacion de que no sea nula
+     * @param speed      velocidad de movimiento del alien
+     * @param scoreValue puntaje que otorga el alien al ser eliminado
      */
     public Alien(int x, int y, String spriteName, int speed, int scoreValue) {
         super(x, y, uploadImage(spriteName));
@@ -56,7 +58,7 @@ public class Alien extends Entity {
     /**
      * Metodo para que el alien descienda
      *
-     * @param pixels
+     * @param pixels cantidad de píxeles que descenderá el alien.
      */
     public void moveDown(int pixels) {
         setY(getY() + pixels);
@@ -81,34 +83,75 @@ public class Alien extends Entity {
 
 
     //getters y setters
+
+    /**
+     * Obtiene la posición inicial del alien en el eje X.
+     *
+     * @return posición inicial en el eje X.
+     */
     public int getInitialX() {
         return initialX;
     }
 
+    /**
+     * Modifica la posición inicial del alien en el eje X.
+     *
+     * @param initialX nueva posición inicial en el eje X.
+     */
     public void setInitialX(int initialX) {
         this.initialX = initialX;
     }
 
+    /**
+     * Obtiene la posición inicial del alien en el eje Y.
+     *
+     * @return posición inicial en el eje Y.
+     */
     public int getInitialY() {
         return initialY;
     }
 
+    /**
+     * Modifica la posición inicial del alien en el eje Y.
+     *
+     * @param initialY nueva posición inicial en el eje Y.
+     */
     public void setInitialY(int initialY) {
         this.initialY = initialY;
     }
 
+    /**
+     * Obtiene el puntaje que entrega el alien al ser eliminado.
+     *
+     * @return valor en puntos del alien.
+     */
     public int getScoreValue() {
         return scoreValue;
     }
 
+    /**
+     * Modifica el puntaje que entrega el alien al ser eliminado.
+     *
+     * @param scoreValue nuevo valor en puntos del alien.
+     */
     public void setScoreValue(int scoreValue) {
         this.scoreValue = scoreValue;
     }
 
+    /**
+     * Obtiene la velocidad de movimiento del alien.
+     *
+     * @return velocidad actual del alien.
+     */
     public int getSpeed() {
         return speed;
     }
 
+    /**
+     * Modifica la velocidad de movimiento del alien.
+     *
+     * @param speed nueva velocidad del alien.
+     */
     public void setSpeed(int speed) {
         this.speed = speed;
     }

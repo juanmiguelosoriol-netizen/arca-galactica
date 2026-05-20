@@ -16,6 +16,10 @@ public class RankingManager {
 
     private File file;
 
+    /**
+     * Crea el administrador del ranking.
+     * También crea la carpeta y el archivo donde se guardan los puntajes si no existen.
+     */
     public RankingManager() {
         File folder = new File("ranking");
         folder.mkdir();

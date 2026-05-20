@@ -8,7 +8,14 @@ import java.util.ArrayList;
  */
 public class GameModel {
 
+    /**
+     * Ancho del tablero de juego en píxeles.
+     */
     public static final int BOARD_WIDTH = 504;
+
+    /**
+     * Alto del tablero de juego en píxeles.
+     */
     public static final int BOARD_HEIGHT = 504;
 
     private Ship ship;
@@ -19,6 +26,10 @@ public class GameModel {
     private ArrayList<AlienProjectile> alienProjectiles;
     private ArrayList<PowerUp> powerUps;
 
+    /**
+     * Crea el modelo principal del juego e inicializa la nave,
+     * los aliens, los animales, los proyectiles y los power-ups.
+     */
     public GameModel() {
         ship = new Ship();
 
@@ -49,6 +60,10 @@ public class GameModel {
         animals[2] = new Monkey(360, 408);
     }
 
+    /**
+     * Actualiza el estado general del modelo del juego.
+     * Mueve la nave, aliens, animales, proyectiles y power-ups.
+     */
     public void update() {
         ship.update();
         ship.keepInside(BOARD_WIDTH);
@@ -102,18 +117,36 @@ public class GameModel {
         }
     }
 
+    /**
+     * Crea y agrega un proyectil disparado por la nave del jugador.
+     */
     public void shootPlayerProjectile() {
         playerProjectiles.add(ship.shoot());
     }
 
+    /**
+     * Agrega un proyectil disparado por un alien.
+     *
+     * @param alienProjectile proyectil del alien que se agregará al modelo.
+     */
     public void addAlienProjectile(AlienProjectile alienProjectile) {
         alienProjectiles.add(alienProjectile);
     }
 
+    /**
+     * Agrega un power-up al juego.
+     *
+     * @param powerUp power-up que se agrega al juego
+     */
     public void addPowerUp(PowerUp powerUp) {
         powerUps.add(powerUp);
     }
 
+    /**
+     * Verifica si todos los aliens fueron eliminados.
+     *
+     * @return true si todos los aliens están inactivos, false si queda alguno activo
+     */
     public boolean allAliensDead() {
         for (int i = 0; i < aliens.length; i++) {
             if (aliens[i].isActive()) {
@@ -124,6 +157,11 @@ public class GameModel {
         return true;
     }
 
+    /**
+     * Verifica si todos los animales fueron eliminados.
+     *
+     * @return true si todos los animales están inactivos, false si queda alguno activo
+     */
     public boolean allAnimalsLost() {
         for (int i = 0; i < animals.length; i++) {
             if (animals[i].isActive()) {
@@ -134,6 +172,9 @@ public class GameModel {
         return true;
     }
 
+    /**
+     * Marca como rescatados a los animales que siguen activos.
+     */
     public void rescueAnimals() {
         for (int i = 0; i < animals.length; i++) {
             if (animals[i].isActive()) {
@@ -142,6 +183,9 @@ public class GameModel {
         }
     }
 
+    /**
+     * Reinicia el modelo para comenzar una nueva partida.
+     */
     public void restart() {
         ship.resetAll();
 
@@ -155,26 +199,57 @@ public class GameModel {
 
 
     //getters y setters
+
+    /**
+     * Retorna la nave del jugador.
+     *
+     * @return nave del jugador
+     */
     public Ship getShip() {
         return ship;
     }
 
+    /**
+     * Retorna los aliens del juego.
+     *
+     * @return arreglo con los aliens
+     */
     public Alien[] getAliens() {
         return aliens;
     }
 
+    /**
+     * Retorna los animales del juego.
+     *
+     * @return arreglo con los animales
+     */
     public Animal[] getAnimals() {
         return animals;
     }
 
+    /**
+     * Retorna los proyectiles disparados por el jugador.
+     *
+     * @return lista de proyectiles del jugador
+     */
     public ArrayList<PlayerProjectile> getPlayerProjectiles() {
         return playerProjectiles;
     }
 
+    /**
+     * Retorna los proyectiles disparados por los aliens.
+     *
+     * @return lista de proyectiles de aliens
+     */
     public ArrayList<AlienProjectile> getAlienProjectiles() {
         return alienProjectiles;
     }
 
+    /**
+     * Retorna los power-ups del juego.
+     *
+     * @return lista de power-ups
+     */
     public ArrayList<PowerUp> getPowerUps() {
         return powerUps;
     }

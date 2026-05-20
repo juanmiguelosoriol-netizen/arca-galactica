@@ -76,22 +76,47 @@ public class Animal extends Entity {
 
     //getters y setters
 
+    /**
+     * Retorna las vidas actuales del animal.
+     *
+     * @return vidas actuales del animal
+     */
     public int getLives() {
         return lives;
     }
 
+    /**
+     * Cambia las vidas actuales del animal.
+     *
+     * @param lives nuevas vidas del animal
+     */
     public void setLives(int lives) {
         this.lives = lives;
     }
 
+    /**
+     * Retorna el nombre del animal.
+     *
+     * @return nombre del animal
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Indica si el animal fue rescatado.
+     *
+     * @return true si fue rescatado, false si no
+     */
     public boolean isRescued() {
         return rescued;
     }
 
+    /**
+     * Cambia el estado de rescate del animal.
+     *
+     * @param rescued nuevo estado de rescate
+     */
     public void setRescued(boolean rescued) {
         this.rescued = rescued;
     }

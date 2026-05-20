@@ -12,13 +12,53 @@ import java.awt.*;
  */
 public class MainFrame extends JFrame {
 
+    /**
+     * Panel principal donde se dibuja el juego.
+     *
+     * @serial panel usado como contenedor visual del juego.
+     */
     private GamePanel gamePanel;
+
+    /**
+     * Controlador principal encargado de manejar la lógica del juego.
+     *
+     * @serial controlador asociado a la ventana principal.
+     */
     private GameController gameController;
 
+    /**
+     * Campo de texto donde el jugador escribe su nombre.
+     *
+     * @serial campo usado para capturar el nombre del jugador.
+     */
     private JTextField nameField;
+
+    /**
+     * Etiqueta que acompaña el campo de texto del nombre del jugador.
+     *
+     * @serial etiqueta visual del campo de nombre.
+     */
     private JLabel nameLabel;
+
+    /**
+     * Botón usado para iniciar la partida.
+     *
+     * @serial botón de inicio del juego.
+     */
     private JButton startButton;
+
+    /**
+     * Botón usado para mostrar las instrucciones del juego.
+     *
+     * @serial botón de acceso a la pantalla de instrucciones.
+     */
     private JButton instructionsButton;
+
+    /**
+     * Botón usado para volver a la pantalla inicial.
+     *
+     * @serial botón de regreso al menú principal.
+     */
     private JButton backButton;
 
     /**

@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Representa un power-up que permite recuperar una vida.
+ */
 public class HeartPowerUp extends PowerUp {
     private static final int SPEED = 2;
 

@@ -11,9 +11,11 @@ public abstract class Projectile extends Entity {
     /**
      * Constructor de la clase Projectile.
      *
-     * @param x          posicion en el eje x
-     * @param y          posicion en el eje y
-     * @param nameSprite sprite de la imagen con la validacion de que no sea nula
+     * @param x          posicion inicial en el eje x
+     * @param y          posicion inicial en el eje y
+     * @param nameSprite nombre del sprite del proyectil
+     * @param direction  direccion en la que se mueve el proyectil
+     * @param speed      velocidad del proyectil
      */
     public Projectile(int x, int y, String nameSprite, int direction, int speed) {
         super(x, y, uploadImage(nameSprite));
@@ -46,10 +48,20 @@ public abstract class Projectile extends Entity {
 
     //getters y setters
 
+    /**
+     * Retorna la velocidad del proyectil.
+     *
+     * @return velocidad del proyectil
+     */
     public int getSpeed() {
         return speed;
     }
 
+    /**
+     * Cambia la velocidad del proyectil.
+     *
+     * @param speed nueva velocidad del proyectil
+     */
     public void setSpeed(int speed) {
         this.speed = speed;
     }
