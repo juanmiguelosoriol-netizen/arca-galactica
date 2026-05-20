@@ -25,12 +25,12 @@ public class GamePanel extends JPanel {
     /**
      * Ancho del tablero donde se desarrolla la partida.
      */
-    public static final int BOARD_WIDTH = 504;
+    public static final int WIDTH = 670;
 
     /**
      * Alto del tablero donde se desarrolla la partida.
      */
-    public static final int BOARD_HEIGHT = 504;
+    public static final int HEIGHT = 510;
 
     /**
      * Modelo principal del juego.
