@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Modelo principal del juego.
- * Guarda los objetos principales de Arca Galáctica.
+ * Guarda los objetos principales de Arca GalÃ¡ctica.
  */
 public class GameModel {
 
@@ -22,7 +22,7 @@ public class GameModel {
     public GameModel() {
         ship = new Ship();
 
-        aliens = new Alien[5];
+        aliens = new Alien[4];
         animals = new Animal[3];
 
         playerProjectiles = new ArrayList<>();
@@ -37,8 +37,9 @@ public class GameModel {
         aliens[0] = new GreenAlien(96, 72);
         aliens[1] = new PurpleAlien(240, 72);
         aliens[2] = new RedAlien(384, 72);
-        aliens[3] = new PurpleAlien(400, 72);
-        aliens[4] = new GreenAlien(315, 72);
+        aliens[3] = new GreenAlien(400, 72);
+
+
     }
 
 

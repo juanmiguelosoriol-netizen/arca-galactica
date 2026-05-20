@@ -39,8 +39,8 @@ public class GameController implements Runnable {
 
     private static final int FPS_DELAY = 16; // controlamos la velocidad del hilo 16ms es casi igual a 60fps
     private static final int ALIEN_DOWN_STEP = 12;  // cuantos pixeles toca un alien en caso de tocar un borde
-    private static final int ALIEN_SHOOT_DELAY = 70;
-    private static final int POWER_UP_DELAY = 100;
+    private static final int ALIEN_SHOOT_DELAY = 90;
+    private static final int POWER_UP_DELAY = 105;
 
     private MainFrame mainFrame;
     private GameModel model;
@@ -389,7 +389,7 @@ public class GameController implements Runnable {
                             projectile.setActive(false);
                             alien.die();
                             model.getShip().addPoints(alien.getScoreValue());
-                            playSound("laser.wav");
+                            //playSound("laser.wav"); se puede poner sonuido pero baja mucho el rendimiento
                         }
                     }
                 }
@@ -411,7 +411,8 @@ public class GameController implements Runnable {
                 if (projectile.getHitBox().intersects(model.getShip().getHitBox())) {
                     projectile.setActive(false);
                     model.getShip().loseLife();
-                    playSound("laser.wav");
+
+                    //playSound("laser.wav");se puede poner sonuido pero baja mucho el rendimiento
                 }
             }
 
@@ -423,7 +424,7 @@ public class GameController implements Runnable {
                         if (projectile.getHitBox().intersects(animal.getHitBox())) {
                             projectile.setActive(false);
                             animal.loseLife();
-                            playSound("laser.wav");
+                            //playSound("laser.wav"); se puede poner sonuido pero baja mucho el rendimiento
                         }
                     }
                 }

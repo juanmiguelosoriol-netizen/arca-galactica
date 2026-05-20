@@ -327,7 +327,7 @@ public class GamePanel extends JPanel {
         g.drawString("Espacio: disparar", hudX + 15, 440);
 
         if (logo != null) {
-            g.drawImage(logo, hudX + 20, 1, this);
+            g.drawImage(logo, hudX + 20, 320, this);
         }
     }
 

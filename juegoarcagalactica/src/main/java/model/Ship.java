@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Clase que crea la nave espacial que controlará el jugador
+ * Clase que crea la nave espacial que controlarÃ¡ el jugador
  * hereda atributos y metodos de la clase Entity
  */
 public class Ship extends Entity {
@@ -26,6 +26,7 @@ public class Ship extends Entity {
         super(X_INITIAL, Y_INITIAL, uploadImage("ship.png"));
         this.score = 0;
         this.lives = INITIAL_LIVES;
+
         this.doublePoints = false;
 
         setDirection(DIR_NONE);
@@ -106,8 +107,18 @@ public class Ship extends Entity {
      * Metodo para que el jugador pierda vidas
      */
     public void loseLife() {
-        if (lives > 0) lives--;
-        if (lives == 0) setActive(false);
+        if (lives > 0) {
+            lives--;
+            if (lives == 2) {
+                setSprite(uploadImage("ship_damaged.png"));
+            } else if (lives == 1) {
+                setSprite(uploadImage("ship_semi_destroyed.png"));
+            }
+        }
+        if (lives == 0) {
+            setActive(false);
+
+        }
     }
 
     /**
@@ -116,6 +127,7 @@ public class Ship extends Entity {
     public void recoverLife() {
         if (lives < INITIAL_LIVES) {
             lives++;
+            setSprite(uploadImage("ship_healed.png"));
         }
     }
 
